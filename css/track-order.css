@@ -1,0 +1,363 @@
+/* ============================================
+   Oven Diaries - track order styles
+   (split from css/style.css)
+   ============================================ */
+
+/* ============ TRACK ORDER ============ */
+.status-pill {
+  padding: 5px 13px;
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.status-pill.delivered {
+  background: rgba(110, 157, 92, 0.16);
+  color: var(--green);
+}
+
+.status-pill.pending {
+  background: rgba(201, 162, 39, 0.16);
+  color: var(--gold);
+}
+
+.status-pill.danger {
+  background: rgba(217, 79, 79, 0.14);
+  color: var(--red);
+}
+
+.status-pill.confirmed {
+  background: rgba(74, 125, 191, 0.15);
+  color: #3f6ea8;
+}
+
+.status-pill.baked {
+  background: rgba(219, 126, 54, 0.16);
+  color: #b96a1e;
+}
+
+.status-pill.ready {
+  background: rgba(0, 150, 136, 0.14);
+  color: #00796b;
+}
+
+.status-pill.out {
+  background: rgba(123, 104, 238, 0.15);
+  color: #5e50c0;
+}
+
+.track-box {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.track-search {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  box-shadow: 0 16px 40px rgba(66, 44, 28, 0.14);
+  display: flex;
+  align-items: center;
+  padding: 8px 8px 8px 22px;
+  gap: 10px;
+}
+
+.track-search input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font: inherit;
+  font-size: 1rem;
+  color: var(--choco);
+  background: transparent;
+  min-width: 0;
+}
+
+.track-search .btn {
+  border-radius: 99px;
+  white-space: nowrap;
+}
+
+@media (max-width: 520px) {
+  .track-search {
+    flex-wrap: wrap;
+    border-radius: 22px;
+    padding: 14px;
+  }
+
+  .track-search .btn {
+    width: 100%;
+  }
+}
+
+.track-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 28px;
+  margin-top: 34px;
+  box-shadow: 0 10px 30px rgba(66, 44, 28, 0.08);
+}
+
+.track-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.track-top h3 {
+  margin: 0;
+  font-family: var(--font-head);
+  color: var(--choco);
+  font-size: 1.4rem;
+}
+
+.track-steps {
+  display: flex;
+  align-items: flex-start;
+  margin: 28px 0 10px;
+}
+
+.track-step {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.track-step .dot {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  display: grid;
+  place-items: center;
+  background: #f4ead9;
+  color: var(--text-light);
+  border: 2px solid var(--border);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.track-step small {
+  display: block;
+  font-weight: 600;
+  color: var(--text-light);
+  font-size: 0.85rem;
+}
+
+.track-step.done small,
+.track-step.current small {
+  color: var(--choco);
+}
+
+.track-step::before {
+  content: '';
+  position: absolute;
+  top: 21px;
+  left: -50%;
+  width: 100%;
+  height: 3px;
+  background: var(--border);
+  z-index: 1;
+}
+
+.track-step:first-child::before {
+  display: none;
+}
+
+.track-step.done::before {
+  background: var(--green);
+}
+
+.track-step.done .dot {
+  background: var(--green);
+  border-color: var(--green);
+  color: #fff;
+}
+
+.track-step.current .dot {
+  background: var(--caramel);
+  border-color: var(--caramel);
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(217, 160, 91, 0.4);
+}
+
+.track-lines {
+  border-top: 1px dashed var(--border);
+  margin-top: 18px;
+  padding-top: 16px;
+  display: grid;
+  gap: 7px;
+  font-size: 0.92rem;
+  color: var(--choco);
+}
+
+.track-rows {
+  margin-top: 14px;
+  background: #fdf9f2;
+  border-radius: 14px;
+  padding: 6px 16px;
+}
+
+.track-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.9rem;
+  padding: 9px 0;
+  border-bottom: 1px dashed var(--border);
+}
+
+.track-row:last-child {
+  border-bottom: none;
+}
+
+.track-row span {
+  color: var(--text-light);
+}
+
+.track-row b {
+  color: var(--choco);
+  text-align: right;
+}
+
+/* ============ REVIEWS ============ */
+.review-section {
+  padding-top: 0;
+}
+
+.review-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 26px;
+  box-shadow: 0 10px 28px rgba(66, 44, 28, 0.07);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.review-card form {
+  display: grid;
+  gap: 14px;
+}
+
+.review-card form .field {
+  display: grid;
+  gap: 6px;
+}
+
+.star-pick {
+  display: flex;
+  gap: 8px;
+}
+
+.star-pick button {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: #e3d5bd;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.star-pick button:hover {
+  transform: scale(1.15);
+}
+
+.star-pick button.on {
+  color: var(--gold);
+}
+
+.rev-count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 26px;
+  height: 26px;
+  padding: 0 9px;
+  background: var(--gold);
+  color: #fff;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  vertical-align: middle;
+}
+
+.review-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.rev-item {
+  background: #fdf9f2;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px 18px;
+}
+
+.rev-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+
+.rev-head b {
+  color: var(--choco);
+}
+
+.rev-head small {
+  color: var(--text-light);
+}
+
+.stars-show {
+  color: var(--gold);
+  letter-spacing: 2px;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.rev-text {
+  color: var(--text-light);
+  font-size: 0.92rem;
+  margin: 0 0 8px;
+  line-height: 1.55;
+}
+
+@media (max-width: 700px) {
+  .track-step .dot {
+    width: 34px;
+    height: 34px;
+    font-size: 0.85rem;
+  }
+
+  .track-step::before {
+    top: 16px;
+  }
+
+  .track-step small {
+    font-size: 0.68rem;
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 700px) {
+  .review-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  section {
+    padding: 64px 0;
+  }
+}

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel — Oven Diaries</title>
+  <meta name="description" content="Oven Diaries admin dashboard — orders, products and users.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23d9a05b'/%3E%3Ctext x='50' y='68' font-size='48' font-family='Georgia' font-weight='bold' fill='white' text-anchor='middle'%3EOD%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+  <div class="admin-layout">
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar" id="admin-sidebar">
+      <a href="index.html" class="logo"><img class="logo-img" src="images/logo.jpg" alt="Oven Diaries">
+        <span class="logo-text">Oven <span style="color:var(--caramel)">Diaries</span></span></a>
+      <ul class="admin-nav" id="admin-nav">
+        <li class="nav-group">Main</li>
+        <li><button data-panel="dashboard" class="active"><i class="fa-solid fa-chart-line"></i> Dashboard</button></li>
+        <li><button data-panel="profile"><i class="fa-solid fa-user-tie"></i> My Profile</button></li>
+        <li><button data-panel="orders"><i class="fa-solid fa-receipt"></i> Orders</button></li>
+        <li><button data-panel="products"><i class="fa-solid fa-cake-candles"></i> Products</button></li>
+        <li><button data-panel="bakery"><i class="fa-solid fa-shop"></i> Bakery</button></li>
+        <li><button data-panel="customcake"><i class="fa-solid fa-palette"></i> Custom Cake</button></li>
+        <li class="nav-group">Manage</li>
+        <li><button data-panel="offers"><i class="fa-solid fa-tags"></i> Offers &amp; Delivery</button></li>
+        <li><button data-panel="delivery"><i class="fa-solid fa-truck-fast"></i> Delivery</button></li>
+        <li><button data-panel="customers"><i class="fa-solid fa-user-group"></i> Users</button></li>
+        <li><button data-panel="complaints"><i class="fa-solid fa-circle-exclamation"></i> Complaints</button></li>
+        <li><button data-panel="reviews"><i class="fa-solid fa-star"></i> Reviews</button></li>
+        <li><button data-panel="accounts"><i class="fa-solid fa-coins"></i> Accounts</button></li>
+      </ul>
+      <div class="admin-side-foot">
+        <a class="admin-viewsite" href="index.html"><i class="fa-solid fa-arrow-left"></i> Back to Site</a>
+        <button class="logout-btn" id="admin-logout"><i class="fa-solid fa-right-from-bracket"></i> Sign out</button>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="admin-main">
+<div class="admin-top" id="admin-top">
+        <button class="icon-btn admin-toggle" id="admin-toggle" style="background:#fff" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+      </div>
+
+<!-- DASHBOARD -->
+      <section data-panel="dashboard" class="admin-panel">
+        <h1>Admin Dashboard</h1>
+        <div class="stat-cards">
+          <div class="admin-stat reveal"><div class="s-icon" style="background:rgba(110,157,92,.18)"><i class="fa-solid fa-coins"></i></div><div><b id="st-sales">Rs. 0</b><span>Total sales</span></div></div>
+          <div class="admin-stat reveal delay-1"><div class="s-icon" style="background:rgba(217,79,79,.13)"><i class="fa-solid fa-cart-shopping"></i></div><div><b id="st-purchases">Rs. 0</b><span>Total purchases</span></div></div>
+          <div class="admin-stat reveal delay-2"><div class="s-icon" style="background:rgba(242,167,179,.22)"><i class="fa-solid fa-receipt"></i></div><div><b id="st-orders">0</b><span>Total orders</span></div></div>
+          <div class="admin-stat reveal delay-3"><div class="s-icon" style="background:rgba(217,160,91,.18)"><i class="fa-solid fa-cake-candles"></i></div><div><b id="st-products">0</b><span>Products in menu</span></div></div>
+          <div class="admin-stat reveal delay-4"><div class="s-icon" style="background:rgba(201,162,39,.2)"><i class="fa-solid fa-user-group"></i></div><div><b id="st-customers">0</b><span>Registered users</span></div></div>
+        </div>
+      </section>
+
+      <!-- PROFILE -->
+      <section data-panel="profile" class="admin-panel" style="display:none">
+        <h2>My Profile</h2>
+        <div class="profile-wrap">
+          <div class="profile-card">
+            <span class="pf-glow"></span>
+            <div class="pf-head">
+              <div class="pf-avatar-wrap">
+                <span class="pf-ring"></span>
+                <div class="pf-avatar" id="pf-avatar">O</div>
+                <span class="pf-status"><i class="fa-solid fa-circle"></i></span>
+              </div>
+              <div class="pf-id">
+                <span class="pf-eyebrow">Admin Profile</span>
+                <h3 id="pf-name">—</h3>
+                <div class="pf-role-row">
+                  <span class="status-pill delivered" id="pf-role"><i class="fa-solid fa-crown"></i> ADMIN</span>
+                  <span class="pf-online"><i class="fa-solid fa-circle"></i> Online</span>
+                </div>
+                <p class="pf-mail" id="pf-mail">—</p>
+              </div>
+            </div>
+            <p class="pf-bio">Behind the counter of Oven Diaries — keeping the bakes fresh, the orders moving and the customers smiling.</p>
+            <div class="pf-stats">
+              <div class="pf-stat"><i class="fa-solid fa-coins"></i><b id="pf-stat-revenue">Rs. 0</b><span>Total revenue</span></div>
+              <div class="pf-stat"><i class="fa-solid fa-receipt"></i><b id="pf-stat-orders">0</b><span>Orders handled</span></div>
+              <div class="pf-stat"><i class="fa-solid fa-cake-candles"></i><b id="pf-stat-products">0</b><span>Products live</span></div>
+              <div class="pf-stat"><i class="fa-solid fa-circle-exclamation"></i><b id="pf-stat-complaints">0</b><span>Open complaints</span></div>
+            </div>
+            <div class="pf-foot">
+              <span><i class="fa-solid fa-location-dot"></i> Lahore, Pakistan</span>
+              <span><i class="fa-solid fa-calendar-check"></i> Member since <b id="pf-since">2026</b></span>
+              <span><i class="fa-solid fa-key"></i> Signed in today <b id="pf-last">—</b></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ORDERS -->
+      <section data-panel="orders" class="admin-panel" style="display:none">
+        <h2>All Orders</h2>
+        <div class="admin-table-wrap"><table class="admin-table">
+          <thead><tr><th>Order ID</th><th>Customer</th><th>Items</th><th>Total (PKR)</th><th>Date &amp; Time</th><th>Status</th><th>Payment</th><th>Actions</th></tr></thead>
+          <tbody id="orders-body"></tbody>
+        </table></div>
+      </section>
+
+      <!-- PRODUCTS -->
+      <section data-panel="products" class="admin-panel" style="display:none">
+        <h2>Menu Products <button class="btn btn-primary btn-sm" id="new-product"><i class="fa-solid fa-plus"></i> Add New Product</button></h2>
+        <p style="color:var(--text-light);font-size:.9rem;margin-top:-8px">Add or edit your menu. Use <b>Trending</b> to pick up to 2 products per category — they appear in the Best Sellers section on the home page.</p>
+        <div class="admin-table-wrap"><table class="admin-table">
+          <thead><tr><th>Product</th><th>Category</th><th>Price (PKR)</th><th>Trending</th><th>Actions</th></tr></thead>
+          <tbody id="products-body"></tbody>
+        </table></div>
+
+        <div id="product-editor" style="display:none">
+          <form class="add-product-form" id="product-form" novalidate>
+            <div class="apf-head">
+              <span class="apf-step"><i class="fa-solid fa-cake-candles"></i></span>
+              <div>
+                <h3 id="pf-title">New Product</h3>
+                <p id="pf-title-sub">No field is required — save anytime and add details later.</p>
+              </div>
+            </div>
+
+            <div class="apf-grid">
+              <div class="apf-card">
+                <h4><i class="fa-solid fa-pen"></i> Details</h4>
+                <div class="field"><label>Product name</label><input id="pf-name" placeholder="e.g. Biscoff Cream Cake"></div>
+                <div class="field"><label>Price (PKR)</label><input id="pf-price" type="number" min="0" step="5" placeholder="2450"></div>
+                <div class="field"><label>Description</label><textarea id="pf-desc" rows="3" placeholder="What makes it irresistible?"></textarea></div>
+              </div>
+
+              <div class="apf-card">
+                <h4><i class="fa-solid fa-sliders"></i> Options — select the available choices</h4>
+                <div class="field"><label>Category</label><select id="pf-cat"></select></div>
+                <div class="apf-grid2">
+                  <div class="field"><label>Weight</label>
+                    <div class="ap-chips" id="pf-weights"></div>
+                    <div class="ap-chip-add"><input data-custom="weights" placeholder='Add weight — e.g. "1 lb"'><button type="button" class="mini-btn primary" data-add-option="weights"><i class="fa-solid fa-plus"></i></button></div>
+                  </div>
+                  <div class="field"><label>Size</label>
+                    <div class="ap-chips" id="pf-sizes"></div>
+                    <div class="ap-chip-add"><input data-custom="sizes" placeholder='Add size — e.g. "1 Kg"'><button type="button" class="mini-btn primary" data-add-option="sizes"><i class="fa-solid fa-plus"></i></button></div>
+                  </div>
+                  <div class="field"><label>Flavour</label>
+                    <div class="ap-chips" id="pf-flavours"></div>
+                    <div class="ap-chip-add"><input data-custom="flavours" placeholder='Add flavour — e.g. "Chocolate"'><button type="button" class="mini-btn primary" data-add-option="flavours"><i class="fa-solid fa-plus"></i></button></div>
+                  </div>
+                  <div class="field"><label>Colour</label><div class="color-picker" id="pf-colors"></div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="apf-card">
+              <h4><i class="fa-solid fa-images"></i> Images — upload or paste a URL, and label each image so it matches a weight, size or flavour</h4>
+              <div class="img-gallery" id="pf-images"></div>
+              <button type="button" class="mini-btn primary" id="pf-img-add"><i class="fa-solid fa-upload"></i> Upload Image</button>
+            </div>
+
+            <div class="actions">
+              <button class="btn btn-primary" type="submit"><i class="fa-solid fa-floppy-disk"></i> Save Product</button>
+              <button class="btn btn-outline" type="button" id="pf-cancel">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- BAKERY / CATEGORIES -->
+      <section data-panel="bakery" class="admin-panel" style="display:none">
+<div style="display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;padding:14px 16px;margin-bottom:18px;border:1px solid var(--border);border-radius:var(--radius,12px);background:var(--surface,transparent)">
+          <div>
+            <h3 style="margin:0;font-size:1.05rem"><i class="fa-solid fa-store"></i> Bakery Status</h3>
+            <p style="margin:4px 0 0;color:var(--text-light);font-size:.85rem">When closed, "Add to Cart" on the shop page and "Place Custom Cake Order" on the custom cake page are hidden.</p>
+          </div>
+          <button class="btn btn-primary btn-sm" id="toggle-shop"><i class="fa-solid fa-store-slash"></i> Close Bakery</button>
+        </div>
+        <h2>Bakery — Categories <button class="btn btn-primary btn-sm" id="add-cat"><i class="fa-solid fa-plus"></i> Add Category</button></h2>
+        <p style="color:var(--text-light);font-size:.9rem;margin-top:-8px">Categories appear as filters in the shop and as cards on the home page. Deleting a category also removes every product in it from the shop.</p>
+        <div class="admin-table-wrap"><table class="admin-table">
+          <thead><tr><th>#</th><th>Category</th><th>Products</th><th>Actions</th></tr></thead>
+          <tbody id="cats-body"></tbody>
+        </table></div>
+        <div id="cat-editor" style="display:none;margin-top:26px;border-top:1px dashed var(--border);padding-top:20px">
+          <h2 id="cat-editor-title">Add Category</h2>
+          <form class="product-form" id="cat-form">
+            <div class="field"><label>Category name *</label><input id="cat-name" required maxlength="40" placeholder="e.g. Brownies &amp; Bars"></div>
+            <div class="actions">
+              <button class="btn btn-primary" type="submit"><i class="fa-solid fa-floppy-disk"></i> Save Category</button>
+              <button class="btn btn-outline" type="button" id="cat-cancel">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- CUSTOM CAKE -->
+      <section data-panel="customcake" class="admin-panel" style="display:none">
+        <h2>Custom Cake Options</h2>
+        <p style="color:var(--text-light);font-size:.9rem;margin-top:-8px">Manage everything shown on the Custom Cake page — flavours, cake types, sizes, message &amp; finishing options and candles. Add, edit or delete options and give each one its own price.</p>
+        <div class="cc-groups">
+
+          <div class="cc-group">
+            <h3><i class="fa-solid fa-ice-cream"></i> Cake Flavours <button class="mini-btn primary" data-add-cc="flavours"><i class="fa-solid fa-plus"></i> Add Flavour</button></h3>
+            <div class="admin-table-wrap"><table class="admin-table">
+              <thead><tr><th>Flavour</th><th>Price (PKR)</th><th>Actions</th></tr></thead>
+              <tbody id="cc-flavours-body"></tbody>
+            </table></div>
+          </div>
+
+          <div class="cc-group">
+            <h3><i class="fa-solid fa-cake-candles"></i> Cake Types <button class="mini-btn primary" data-add-cc="bases"><i class="fa-solid fa-plus"></i> Add Type</button></h3>
+            <div class="admin-table-wrap"><table class="admin-table">
+              <thead><tr><th>Type</th><th>Price (PKR)</th><th>Actions</th></tr></thead>
+              <tbody id="cc-bases-body"></tbody>
+            </table></div>
+          </div>
+
+          <div class="cc-group">
+            <h3><i class="fa-solid fa-ruler-combined"></i> Cake Sizes <button class="mini-btn primary" data-add-cc="sizes"><i class="fa-solid fa-plus"></i> Add Size</button></h3>
+            <div class="admin-table-wrap"><table class="admin-table">
+              <thead><tr><th>Size</th><th>Price (PKR)</th><th>Actions</th></tr></thead>
+              <tbody id="cc-sizes-body"></tbody>
+            </table></div>
+          </div>
+
+          <div class="cc-group">
+            <h3><i class="fa-solid fa-pen"></i> Message &amp; Finishing <button class="mini-btn primary" data-add-cc="extras"><i class="fa-solid fa-plus"></i> Add Option</button></h3>
+            <div class="admin-table-wrap"><table class="admin-table">
+              <thead><tr><th>Option</th><th>Price (PKR)</th><th>Actions</th></tr></thead>
+              <tbody id="cc-extras-body"></tbody>
+            </table></div>
+          </div>
+
+          <div class="cc-group">
+            <h3><i class="fa-solid fa-fire"></i> Candles <button class="mini-btn primary" data-add-cc="candles"><i class="fa-solid fa-plus"></i> Add Candle</button></h3>
+            <div class="admin-table-wrap"><table class="admin-table">
+              <thead><tr><th>Candle</th><th>Price (PKR)</th><th>Actions</th></tr></thead>
+              <tbody id="cc-candles-body"></tbody>
+            </table></div>
+          </div>
+
+        </div>
+
+        <div class="cc-group cc-orders" style="margin-top:22px">
+          <h3><i class="fa-solid fa-receipt"></i> Custom Cake Orders <span class="cc-count" id="cc-orders-count">0</span></h3>
+          <div class="admin-table-wrap"><table class="admin-table">
+            <thead><tr><th>Order ID</th><th>Customer</th><th>Items</th><th>Total (PKR)</th><th>Date &amp; Time</th><th>Actions</th></tr></thead>
+            <tbody id="cc-orders-body"></tbody>
+          </table></div>
+        </div>
+
+        <div id="cc-editor" style="display:none;margin-top:26px;border-top:1px dashed var(--border);padding-top:20px">
+          <h2 id="cc-editor-title">Add Option</h2>
+          <form class="product-form" id="cc-form">
+            <div class="field"><label id="cc-editor-name-label">Name *</label><input id="cc-name" required maxlength="60" placeholder="e.g. Vanilla"></div>
+            <div class="field"><label>Price (PKR) — leave 0 for free</label><input id="cc-price" type="number" min="0" step="50" placeholder="0"></div>
+            <div class="actions">
+              <button class="btn btn-primary" type="submit"><i class="fa-solid fa-floppy-disk"></i> Save Option</button>
+              <button class="btn btn-outline" type="button" id="cc-cancel">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- OFFERS & DELIVERY -->
+      <section data-panel="offers" class="admin-panel" style="display:none">
+        <h2>Offers &amp; Delivery</h2>
+        <p style="color:var(--text-light);font-size:.9rem;margin-top:-8px">Set a percentage OFF that customers see applied in the cart order summary (one offer active at a time), and choose between free delivery or paid delivery by area.</p>
+        <div class="cc-groups">
+
+          <div class="cc-group">
+            <h3><i class="fa-solid fa-tags"></i> Percentage Offers <button class="mini-btn primary" id="add-offer"><i class="fa-solid fa-plus"></i> Add Offer</button></h3>
+            <p style="color:var(--text-light);font-size:.85rem;margin:-4px 0 14px">Each offer renders as an elegant card right here and in the home page Offers section. The active offer applies its percentage in the cart.</p>
+            <div class="offer-cards" id="offers-body"></div>
+            <div id="of-editor" style="display:none;margin-top:22px;border-top:1px dashed var(--border);padding-top:18px">
+              <h3 id="of-editor-title">Add Offer</h3>
+              <form class="product-form" id="of-form">
+                <div class="field"><label>Offer title *</label><input id="of-title" required maxlength="60" placeholder="e.g. Summer Sale"></div>
+                <div class="field"><label>Percentage OFF (1–100) *</label><input id="of-percent" type="number" min="1" max="100" required placeholder="10"></div>
+                <div class="actions">
+                  <button class="btn btn-primary" type="submit"><i class="fa-solid fa-floppy-disk"></i> Save Offer</button>
+                  <button class="btn btn-outline" type="button" id="of-cancel">Cancel</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+<div class="cc-group">
+            <h3><i class="fa-solid fa-truck-fast"></i> Delivery</h3>
+            <p style="color:var(--text-light);font-size:.85rem;margin:-4px 0 14px">Pick how delivery is charged. Cities and area prices are managed in the <b>Delivery</b> section.</p>
+            <div class="delivery-mode">
+              <label class="mode-pick"><input type="radio" name="delivery-mode" value="free"><span><i class="fa-solid fa-gift"></i> Free Delivery — Rs. 0 in cart</span></label>
+              <label class="mode-pick"><input type="radio" name="delivery-mode" value="paid"><span><i class="fa-solid fa-money-bill-wave"></i> Paid Delivery — by area</span></label>
+            </div>
+          </div>
+
+        </div>
+</section>
+
+      <!-- DELIVERY -->
+      <section data-panel="delivery" class="admin-panel" style="display:none">
+        <h2>Delivery — Cities &amp; Areas</h2>
+        <p style="color:var(--text-light);font-size:.9rem;margin-top:-8px">Add cities and give every city its own delivery areas with prices. Customers pick their area on the Cart page and pay that area's price.</p>
+        <div class="cc-groups">
+
+          <div class="cc-group">
+            <h3><i class="fa-solid fa-city"></i> Add City</h3>
+            <div class="city-row">
+              <input id="del-new-city" maxlength="40" placeholder="City name — e.g. Multan" style="flex:1;min-width:180px;padding:10px 14px;border:1.5px solid var(--border);border-radius:12px;font:inherit;background:#fff;outline:none">
+              <button class="mini-btn primary" id="add-del-city"><i class="fa-solid fa-plus"></i> Add City</button>
+            </div>
+          </div>
+
+          <div class="cc-group" id="del-area-form">
+            <h3><i class="fa-solid fa-location-dot"></i> Add Delivery Area &amp; Price</h3>
+            <div class="area-add">
+              <select id="del-area-city" style="padding:10px 14px;border:1.5px solid var(--border);border-radius:12px;font:inherit;background:#fff"></select>
+              <input id="del-area-name" maxlength="60" placeholder="Area name — e.g. Gulberg III">
+              <input id="del-area-price" type="number" min="0" step="50" placeholder="Price (PKR)">
+              <button class="mini-btn primary" id="del-area-add"><i class="fa-solid fa-plus"></i> Add Area</button>
+            </div>
+          </div>
+
+          <div id="del-cities-list"></div>
+
+        </div>
+      </section>
+
+      <!-- USERS -->
+      <section data-panel="customers" class="admin-panel" style="display:none">
+        <h2>Registered Users</h2>
+        <p style="color:var(--text-light);font-size:.9rem;margin-top:-8px">Manage user accounts — edit their email, phone or password, or ban an account so it can no longer log in.</p>
+        <div class="admin-table-wrap"><table class="admin-table">
+          <thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Role</th><th>Status</th><th>Actions</th></tr></thead>
+          <tbody id="customers-body"></tbody>
+        </table></div>
+        <div id="cust-editor" style="display:none;margin-top:26px;border-top:1px dashed var(--border);padding-top:20px">
+          <h2 id="cust-editor-title">Edit User</h2>
+          <form class="product-form" id="cust-form">
+            <div class="field"><label>Name *</label><input id="cust-name" maxlength="60" placeholder="Full name"></div>
+            <div class="field"><label>Email *</label><input id="cust-email" maxlength="80" placeholder="user@email.com"></div>
+            <div class="field"><label>Phone</label><input id="cust-phone" maxlength="20" placeholder="0300-1234567"></div>
+            <div class="field"><label>Password *</label><input id="cust-pass" maxlength="40" placeholder="New password"></div>
+            <div class="actions">
+              <button class="btn btn-primary" type="submit"><i class="fa-solid fa-floppy-disk"></i> Save User</button>
+              <button class="btn btn-outline" type="button" id="cust-cancel">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- COMPLAINTS -->
+      <section data-panel="complaints" class="admin-panel" style="display:none">
+        <h2>Complaints <button class="btn btn-primary btn-sm" id="add-complaint"><i class="fa-solid fa-plus"></i> Add Complaint</button></h2>
+        <p style="color:var(--text-light);font-size:.9rem;margin-top:-8px">Complaints submitted from the About page appear here automatically. Add one manually, view the full details, edit the information, tick them off when resolved or delete them.</p>
+        <div class="admin-table-wrap"><table class="admin-table">
+          <thead><tr><th>Complaint ID</th><th>Customer</th><th>Order ID</th><th>Date &amp; Time</th><th>Status</th><th>Actions</th></tr></thead>
+          <tbody id="complaints-body"></tbody>
+        </table></div>
+
+        <div id="comp-editor" style="display:none;margin-top:26px;border-top:1px dashed var(--border);padding-top:20px">
+          <h2 id="comp-editor-title">Add Complaint</h2>
+          <form class="product-form" id="comp-admin-form">
+            <div class="field"><label>Order ID *</label><input id="comp-admin-oid" maxlength="20" placeholder="e.g. OD-1847"></div>
+            <div class="field"><label>Customer details *</label><input id="comp-admin-customer" maxlength="80" placeholder="Name, email or phone"></div>
+            <div class="field"><label>Attachment (optional)</label><input id="comp-admin-file" maxlength="120" placeholder="File name or link — e.g. photo-2026.jpg"></div>
+            <div class="field" style="grid-column:1/-1"><label>Description *</label><textarea id="comp-admin-desc" rows="4" maxlength="600" placeholder="What went wrong?"></textarea></div>
+            <div class="actions">
+              <button class="btn btn-primary" type="submit"><i class="fa-solid fa-floppy-disk"></i> Save Complaint</button>
+              <button class="btn btn-outline" type="button" id="comp-cancel">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- REVIEWS -->
+      <section data-panel="reviews" class="admin-panel" style="display:none">
+        <h2>Reviews <button class="btn btn-primary btn-sm" id="add-review"><i class="fa-solid fa-plus"></i> Add Review</button></h2>
+        <p style="color:var(--text-light);font-size:.9rem;margin-top:-8px">Reviews submitted by customers from the Track Order page appear here automatically. Use the <b>eye</b> to show or hide a review in the home page testimonials — a maximum of <b>3</b> can be shown at a time.</p>
+        <div class="admin-table-wrap"><table class="admin-table">
+          <thead><tr><th>Customer</th><th>Review</th><th>Date</th><th>Status</th><th>Actions</th></tr></thead>
+          <tbody id="reviews-body"></tbody>
+        </table></div>
+
+        <div id="rev-editor" style="display:none;margin-top:26px;border-top:1px dashed var(--border);padding-top:20px">
+          <h2 id="rev-editor-title">Add Review</h2>
+          <form class="product-form" id="rev-admin-form">
+            <div class="field"><label>Customer name *</label><input id="rev-name" maxlength="60" placeholder="e.g. Ayesha Khan"></div>
+            <div class="field"><label>Customer image (URL, optional)</label><input id="rev-img" maxlength="300" placeholder="https://.../photo.jpg"></div>
+            <div class="field"><label>Stars *</label><div class="stars-pick" id="rev-stars"></div></div>
+            <div class="field" style="grid-column:1/-1"><label>Review *</label><textarea id="rev-text" rows="3" maxlength="500" placeholder="What did the customer say?"></textarea></div>
+            <div class="actions">
+              <button class="btn btn-primary" type="submit"><i class="fa-solid fa-floppy-disk"></i> Save Review</button>
+              <button class="btn btn-outline" type="button" id="rev-cancel">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- ACCOUNTS -->
+      <section data-panel="accounts" class="admin-panel" style="display:none">
+        <h2>Accounts</h2>
+        <p style="color:var(--text-light);font-size:.9rem;margin-top:-8px">Track your bakery's money — delivered orders are recorded as sales automatically, and purchases you add are listed alongside. Today's totals are shown on each card.</p>
+        <div class="cc-groups">
+
+          <div class="cc-group">
+            <h3><i class="fa-solid fa-coins"></i> Sales <span class="cc-count" id="sales-count">0</span></h3>
+            <p style="color:var(--text-light);font-size:.85rem;margin:-4px 0 14px">When an order is marked delivered (or cleared), its bill amount lands here automatically.</p>
+            <div class="acc-summary">
+              <span class="acc-chip"><i class="fa-solid fa-calendar-day"></i> Today's sale <b id="sales-today">Rs. 0</b></span>
+              <span class="acc-chip"><i class="fa-solid fa-wallet"></i> Total sales <b id="sales-total">Rs. 0</b></span>
+            </div>
+            <div class="admin-table-wrap"><table class="admin-table">
+              <thead><tr><th>Order ID</th><th>Customer</th><th>Amount (PKR)</th><th>Date &amp; Time</th></tr></thead>
+              <tbody id="sales-body"></tbody>
+            </table></div>
+          </div>
+
+          <div class="cc-group">
+            <h3><i class="fa-solid fa-cart-shopping"></i> Purchases <button class="mini-btn primary" id="add-purchase"><i class="fa-solid fa-plus"></i> Add Purchase</button></h3>
+            <p style="color:var(--text-light);font-size:.85rem;margin:-4px 0 14px">Record raw materials, packaging and supplies — with an optional invoice attachment.</p>
+            <div class="acc-summary">
+              <span class="acc-chip"><i class="fa-solid fa-calendar-day"></i> Today's purchases <b id="purchases-today">Rs. 0</b></span>
+              <span class="acc-chip"><i class="fa-solid fa-wallet"></i> Total purchases <b id="purchases-total">Rs. 0</b></span>
+            </div>
+            <div class="admin-table-wrap"><table class="admin-table">
+              <thead><tr><th>Item</th><th>Type</th><th>Amount (PKR)</th><th>Date &amp; Time</th><th>Actions</th></tr></thead>
+              <tbody id="purchases-body"></tbody>
+            </table></div>
+
+            <div id="pur-editor" style="display:none;margin-top:22px;border-top:1px dashed var(--border);padding-top:18px">
+              <h3 id="pur-editor-title">Add Purchase</h3>
+              <form class="product-form" id="pur-form">
+                <div class="field"><label>Item name *</label><input id="pur-name" maxlength="60" placeholder="e.g. Baker's flour (50 kg)"></div>
+                <div class="field"><label>Type *</label><select id="pur-type">
+                  <option value="Ingredients">Ingredients</option>
+                  <option value="Packaging">Packaging</option>
+                  <option value="Equipment">Equipment</option>
+                  <option value="Utilities">Utilities</option>
+                  <option value="Miscellaneous">Miscellaneous</option>
+                </select></div>
+                <div class="field"><label>Amount (PKR) *</label><input id="pur-amount" type="number" min="0" step="50" placeholder="7500"></div>
+                <div class="field" style="grid-column:1/-1"><label>Description</label><textarea id="pur-desc" rows="3" maxlength="400" placeholder="What was it for?"></textarea></div>
+                <div class="field" style="grid-column:1/-1"><label>Invoice / receipt (optional)</label>
+                  <label class="comp-file" for="pur-file">
+                    <input type="file" id="pur-file" hidden>
+                    <i class="fa-solid fa-paperclip"></i>
+                    <span id="pur-file-label">Attach a file</span>
+                    <small id="pur-file-name" style="display:none"></small>
+                  </label>
+                </div>
+                <div class="actions">
+                  <button class="btn btn-primary" type="submit"><i class="fa-solid fa-floppy-disk"></i> Save Purchase</button>
+                  <button class="btn btn-outline" type="button" id="pur-cancel">Cancel</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="print-receipt"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

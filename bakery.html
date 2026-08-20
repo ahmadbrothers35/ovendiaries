@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bakery Shop — Oven Diaries</title>
+  <meta name="description" content="Order cream cakes, pastries, breads, fast food and drinks from Oven Diaries. All prices in PKR.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bakery.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23d9a05b'/%3E%3Ctext x='50' y='68' font-size='48' font-family='Georgia' font-weight='bold' fill='white' text-anchor='middle'%3EOD%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+  <header id="site-header"></header>
+
+  <!-- ============ PAGE HERO ============ -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>The Bakery <span class="accent">Shop</span></h1>
+      <p>Fresh cream cakes, crispy fast food and warm bakes — every price in Pakistani Rupees (PKR).</p>
+      <div class="crumbs" id="crumbs"></div>
+    </div>
+  </section>
+
+  <!-- ============ SHOP ============ -->
+  <section>
+    <div class="container">
+      <div class="toolbar reveal">
+        <div class="filters" id="filters">
+          <button class="chip active" data-cat="all">All Items</button>
+          <button class="chip" data-cat="cakes">Cream Cakes</button>
+          <button class="chip" data-cat="pastries">Pastries</button>
+          <button class="chip" data-cat="breads">Breads</button>
+          <button class="chip" data-cat="fastfood">Fast Food</button>
+          <button class="chip" data-cat="drinks">Drinks</button>
+        </div>
+        <div class="store-actions">
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass" style="color:var(--text-light)"></i>
+            <input type="search" id="search" placeholder="Search the bakery...">
+          </div>
+          <select class="sort-select" id="sort">
+            <option value="featured">Sort: Featured</option>
+            <option value="low">Price: Low → High</option>
+            <option value="high">Price: High → Low</option>
+            <option value="name">Name: A → Z</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="products-grid" id="shop-grid" style="min-height:300px"></div>
+
+      <p id="no-results" style="text-align:center;color:var(--text-light);display:none;font-size:1.05rem">
+        No bakes found for that search — try "cake", "zinger" or "donut".
+      </p>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/bakery.js"></script>
+</body>
+</html>

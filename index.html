@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oven Diaries — Fresh Cream Cakes & Fast Food Bakery</title>
+  <meta name="description"
+    content="Oven Diaries — Lahore's freshest bakery. Cream cakes, pastries, fast food & custom cakes. Prices in PKR.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,600&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23d9a05b'/%3E%3Ctext x='50' y='68' font-size='48' font-family='Georgia' font-weight='bold' fill='white' text-anchor='middle'%3EOD%3C/text%3E%3C/svg%3E">
+</head>
+
+<body>
+
+  <header id="site-header"></header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" style="margin-top: -100px;">
+    <div class="hero-bg" id="hero-bg" aria-hidden="true"></div>
+    <div class="hero-blob blob-1"></div>
+    <div class="hero-blob blob-2"></div>
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <span class="hero-tag"><span class="dot"></span> Baking fresh every morning at 6 AM</span>
+        <h1>Sweet <span class="accent">Moments</span>, Freshly Baked Every Day</h1>
+        <p class="lead">From velvet cream cakes to sizzling fast food — Oven Diaries crafts everything in our own ovens,
+          with real butter, real cream and a whole lot of love. All prices in PKR.</p>
+        <div class="hero-cta">
+          <a href="bakery.html" class="btn btn-primary btn-lg"><i class="fa-solid fa-cart-shopping"></i> Shop Now</a>
+          <a href="custom-cake.html" class="btn btn-outline btn-lg"><i class="fa-solid fa-palette"></i> Design Your
+            Cake</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-ring"></div>
+        <div class="hero-slider">
+          <div class="hero-slide active">
+            <img class="hero-slide-img"
+              src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?auto=format&fit=crop&w=900&q=80"
+              alt="Birthday cream cake from Oven Diaries"
+              onerror="this.outerHTML='<div class=&quot;hero-slide-img&quot; style=&quot;display:grid;place-items:center;background:linear-gradient(145deg,#fff3e2,#ffe4c4);font-size:7rem;color:var(--caramel-dark)&quot;><i class=&quot;fa-solid fa-cake-candles&quot;></i></div>'">
+          </div>
+          <div class="hero-slide">
+            <img class="hero-slide-img"
+              src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80"
+              alt="Chicken zinger burger from Oven Diaries"
+              onerror="this.outerHTML='<div class=&quot;hero-slide-img&quot; style=&quot;display:grid;place-items:center;background:linear-gradient(145deg,#ffe9d6,#ffc9a1);font-size:7rem;color:var(--caramel-dark)&quot;><i class=&quot;fa-solid fa-burger&quot;></i></div>'">
+          </div>
+          <div class="hero-slide">
+            <img class="hero-slide-img"
+              src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=80"
+              alt="Chicken tikka pizza from Oven Diaries"
+              onerror="this.outerHTML='<div class=&quot;hero-slide-img&quot; style=&quot;display:grid;place-items:center;background:linear-gradient(145deg,#ffe5c9,#ffb977);font-size:7rem;color:var(--caramel-dark)&quot;><i class=&quot;fa-solid fa-pizza-slice&quot;></i></div>'">
+          </div>
+          <div class="hero-slide">
+            <img class="hero-slide-img"
+              src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=900&q=80"
+              alt="Loaded fries from Oven Diaries"
+              onerror="this.outerHTML='<div class=&quot;hero-slide-img&quot; style=&quot;display:grid;place-items:center;background:linear-gradient(145deg,#fff3c9,#ffe89a);font-size:7rem;color:var(--caramel-dark)&quot;><i class=&quot;fa-solid fa-bowl-food&quot;></i></div>'">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint">Scroll<i class="fa-solid fa-chevron-down"></i></div>
+  </section>
+
+  <!-- ============ BESTSELLERS ============ -->
+  <section style="background:var(--cream-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Customer Favourites</span>
+        <h2>This Week's Bestsellers</h2>
+        <p>Picked by thousands of sweet-toothed customers across Lahore.</p>
+      </div>
+      <div class="products-grid" id="bestsellers"></div>
+      <div style="text-align:center;margin-top:40px" class="reveal">
+        <a href="bakery.html" class="btn btn-dark">View Full Bakery Menu <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CATEGORIES ============ -->
+  <section id="categories">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Our Menu</span>
+        <h2>What are you craving today?</h2>
+        <p>Every item is baked in-house, in small batches, and priced in Pakistani Rupees.</p>
+      </div>
+      <div class="cats-grid" id="cats-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT PREVIEW ============ -->
+  <section>
+    <div class="container split">
+      <div class="visual reveal-left">
+        <div
+          style="width:100%;height:470px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(135deg,#ffe9d6,#f7cfa4);box-shadow:0 25px 60px rgba(62,39,35,.18)">
+          <i class="fa-solid fa-bowl-food"
+            style="font-size:8rem;color:var(--caramel-dark);animation:wiggle 6s ease-in-out infinite"></i>
+        </div>
+        <div class="floating-card"><b>2012</b><span>Baking with love since</span></div>
+      </div>
+      <div class="reveal-right">
+        <span class="eyebrow"
+          style="color:var(--caramel-dark);letter-spacing:3px;text-transform:uppercase;font-size:.82rem;font-weight:600">Our
+          Story</span>
+        <h2>Where Every Cake Tells a Happy Story</h2>
+        <p>Oven Diaries started as a tiny family oven in 2012. Today we're Lahore's favourite neighbourhood bakery —
+          famous for cream cakes that melt, fast food that sizzles, and custom cakes that make birthdays unforgettable.
+        </p>
+        <ul class="check-list">
+          <li><i class="fa-solid fa-check"></i> Halal-certified kitchen with daily fresh batches</li>
+          <li><i class="fa-solid fa-check"></i> 100% Veg-free, preservative-free recipes</li>
+          <li><i class="fa-solid fa-check"></i> Custom cakes delivered across the city</li>
+          <li><i class="fa-solid fa-check"></i> Honest PKR pricing — no hidden charges</li>
+        </ul>
+        <a href="about.html" class="btn btn-primary">Read Our Story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CUSTOM CAKE BANNER ============ -->
+  <section>
+    <div class="container">
+      <div class="custom-banner reveal-zoom">
+        <div class="info">
+          <span
+            style="color:var(--caramel);letter-spacing:3px;text-transform:uppercase;font-size:.8rem;font-weight:600">Made
+            Just For You</span>
+          <h2>Design Your Dream Custom Cake</h2>
+          <p>Pick the flavour, size, colour and message — our bakers will sculpt it exactly the way you imagine.
+            Starting from Rs. 2,450.</p>
+          <ul class="steps">
+            <li><b>1.</b> Choose flavour &amp; size</li>
+            <li><b>2.</b> Add your message &amp; theme</li>
+            <li><b>3.</b> We bake fresh &amp; deliver</li>
+          </ul>
+          <a href="custom-cake.html" class="btn btn-primary btn-lg"><i class="fa-solid fa-palette"></i> Start
+            Designing</a>
+        </div>
+        <div class="visual">
+          <img class="banner-cake-big banner-img"
+            src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=900&q=80"
+            alt="Strawberry cream cake">
+          <img class="banner-cake-small banner-img"
+            src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=500&q=80"
+            alt="Cupcakes">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OFFERS ============ -->
+  <section class="offers-sec" id="offers-sec">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Sweet Deals</span>
+        <h2>Today's <span class="accent">Offers</span></h2>
+        <p>Hand-picked discounts from our bakery — applied automatically when you checkout.</p>
+      </div>
+      <div class="offers-grid" id="offers-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section style="background:var(--cream-2);border-top:1px solid var(--border)">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Sweet Words</span>
+        <h2>What Our Customers Say</h2>
+        <p>Over 10,000 happy reviews and counting.</p>
+      </div>
+      <div class="testi-grid" id="testimonials"></div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURES ============ -->
+  <section class="features">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature reveal">
+          <div class="f-icon"><i class="fa-solid fa-ice-cream"></i></div>
+          <h3>Real Butter &amp; Cream</h3>
+          <p>No shortcuts — only fresh dairy and premium ingredients.</p>
+        </div>
+        <div class="feature reveal delay-1">
+          <div class="f-icon"><i class="fa-solid fa-sun"></i></div>
+          <h3>Baked Daily</h3>
+          <p>A new batch hits the shelves every single morning.</p>
+        </div>
+        <div class="feature reveal delay-2">
+          <div class="f-icon"><i class="fa-solid fa-moped"></i></div>
+          <h3>Fast Delivery</h3>
+          <p>Hot and fresh at your doorstep within 45 minutes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/index.js"></script>
+</body>
+
+</html>

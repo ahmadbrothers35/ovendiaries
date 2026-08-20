@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login / Sign up — Oven Diaries</title>
+  <meta name="description" content="Login or create your Oven Diaries account — or jump straight into the bakery management dashboard.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23d9a05b'/%3E%3Ctext x='50' y='68' font-size='48' font-family='Georgia' font-weight='bold' fill='white' text-anchor='middle'%3EOD%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+  <header id="site-header"></header>
+
+  <div class="auth-wrap">
+    <div class="auth-shape sh-1"></div>
+    <div class="auth-shape sh-2"></div>
+    <div class="auth-shape sh-3"></div>
+
+    <div class="auth-shell">
+      <div class="auth-visual">
+        <div class="auth-blob blob-a"></div>
+        <div class="auth-blob blob-b"></div>
+        <a href="index.html" class="logo auth-logo" aria-label="Oven Diaries home">
+          <span class="logo-icon"><i class="fa-solid fa-cake-candles"></i></span>
+          <span class="logo-text">Oven <span>Diaries</span></span>
+        </a>
+
+        <div class="auth-float-img" aria-hidden="true">
+          <div class="img-ring"></div>
+          <i class="fa-solid fa-cake-candles"></i>
+        </div>
+
+        <div class="auth-visual-mid">
+          <span class="auth-eyebrow">Member Area</span>
+          <h2>Sweet moments start with one order.</h2>
+          <p>Fresh cream cakes, custom bakes and crispy fast food — saved to your account for easy reordering.</p>
+          <ul class="auth-perks">
+            <li><i class="fa-solid fa-truck-fast"></i> Track every order live</li>
+            <li><i class="fa-solid fa-gift"></i> Members-only deals</li>
+            <li><i class="fa-solid fa-heart"></i> Faster checkout</li>
+          </ul>
+        </div>
+
+        <div class="auth-badge badge-1"><i class="fa-solid fa-sun"></i><div><b>Fresh at 6 AM</b><span>Baked daily, never frozen</span></div></div>
+        <div class="auth-badge badge-2"><i class="fa-solid fa-heart"></i><div><b>2,500+</b><span>Happy orders every week</span></div></div>
+        <div class="auth-note"><i class="fa-solid fa-heart"></i> Lahore's neighbourhood bakery since 2012</div>
+      </div>
+
+      <div class="auth-card">
+        <div class="auth-box">
+          <div class="auth-tabs" id="auth-tabs">
+            <button class="tab active" data-tab="login" type="button"><i class="fa-solid fa-right-to-bracket"></i> Login</button>
+            <button class="tab" data-tab="signup" type="button"><i class="fa-solid fa-user-plus"></i> Sign Up</button>
+          </div>
+
+          <div id="auth-views">
+            <div id="view-login">
+              <form class="auth-form" id="login-form" novalidate>
+                <div class="field">
+                  <label>Email address</label>
+                  <div class="input-wrap">
+                    <i class="fa-solid fa-envelope input-icon"></i>
+                    <input type="email" id="login-email" placeholder="you@example.com" maxlength="80">
+                  </div>
+                </div>
+                <div class="field">
+                  <label>Password</label>
+                  <div class="input-wrap">
+                    <i class="fa-solid fa-lock input-icon"></i>
+                    <input type="password" id="login-pass" placeholder="Your password" maxlength="40">
+                    <button class="password-toggle" type="button" data-eye="login-pass" aria-label="Show password"><i class="fa-solid fa-eye"></i></button>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <label><input type="checkbox" class="remember" id="login-remember"> Remember me</label>
+                  <a href="track-order.html" class="link-accent">Forgot password? Track your order</a>
+                </div>
+                <button class="btn btn-primary" type="submit"><i class="fa-solid fa-right-to-bracket"></i> Login</button>
+              </form>
+              <p class="switch-note">New here? <a href="#" class="link-accent" data-switch="signup">Create an account</a></p>
+            </div>
+
+            <div id="view-signup" style="display:none">
+              <form class="auth-form" id="signup-form" novalidate>
+                <div class="field">
+                  <label>Full name</label>
+                  <div class="input-wrap">
+                    <i class="fa-solid fa-user input-icon"></i>
+                    <input type="text" id="signup-name" placeholder="Your name" maxlength="60">
+                  </div>
+                </div>
+                <div class="field">
+                  <label>Email address</label>
+                  <div class="input-wrap">
+                    <i class="fa-solid fa-envelope input-icon"></i>
+                    <input type="email" id="signup-email" placeholder="you@example.com" maxlength="80">
+                  </div>
+                </div>
+                <div class="field">
+                  <label>Password</label>
+                  <div class="input-wrap">
+                    <i class="fa-solid fa-lock input-icon"></i>
+                    <input type="password" id="signup-pass" placeholder="At least 6 characters" maxlength="40">
+                    <button class="password-toggle" type="button" data-eye="signup-pass" aria-label="Show password"><i class="fa-solid fa-eye"></i></button>
+                  </div>
+                </div>
+                <button class="btn btn-primary" type="submit"><i class="fa-solid fa-user-plus"></i> Create Account</button>
+              </form>
+              <p class="switch-note">Already have an account? <a href="#" class="link-accent" data-switch="login">Log in</a></p>
+            </div>
+          </div>
+
+          <div id="view-welcome" style="display:none">
+            <div class="order-success comp-card">
+              <div class="ok-icon"><i class="fa-solid fa-cake-candles"></i></div>
+              <h3>Welcome, <span id="welcome-name">—</span>!</h3>
+              <p id="welcome-msg">Logged in successfully.</p>
+              <a class="btn btn-primary" id="welcome-continue" href="index.html"><i class="fa-solid fa-arrow-right"></i> Continue Shopping</a>
+            </div>
+          </div>
+
+          <div class="auth-admin">
+            <span class="line"></span>
+            <div class="admin-in">
+              <i class="fa-solid fa-user-shield"></i>
+              <span>Bakery staff? Enter the management dashboard</span>
+              <div class="admin-fields" id="admin-fields" style="display:none">
+                <input type="email" id="admin-email" placeholder="Admin email" maxlength="80" autocomplete="username">
+                <div class="input-wrap">
+                  <input type="password" id="admin-pass" placeholder="Password" maxlength="40" autocomplete="current-password">
+                  <button class="password-toggle" type="button" data-eye="admin-pass" aria-label="Show password"><i class="fa-solid fa-eye"></i></button>
+                </div>
+              </div>
+              <button class="admin-link" id="admin-enter" type="button"><i class="fa-solid fa-crown"></i> Management</button>
+            </div>
+          </div>
+
+          <p class="demo-note"><i class="fa-solid fa-key"></i> Demo login: saman@ovendiaries.pk / saman5599- — customers: demo@ovendiaries.pk / demo123</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer id="site-footer"></footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

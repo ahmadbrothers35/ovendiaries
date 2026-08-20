@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Cake — Oven Diaries</title>
+  <meta name="description" content="Design your own custom cake — pick flavour, size, colours and message. Prices in PKR.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/custom-cake.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23d9a05b'/%3E%3Ctext x='50' y='68' font-size='48' font-family='Georgia' font-weight='bold' fill='white' text-anchor='middle'%3EOD%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+  <header id="site-header"></header>
+
+  <!-- ============ PAGE HERO ============ -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Custom <span class="accent">Cake Builder</span></h1>
+      <p>Bakers sculpt cake live in front of you — pick a flavour, size and message. Base price Rs. 2,450.</p>
+      <div class="crumbs" id="crumbs"></div>
+    </div>
+  </section>
+
+  <!-- ============ BUILDER ============ -->
+  <section>
+    <div class="container cake-builder">
+
+      <!-- LEFT: form -->
+      <form class="builder-form reveal-left" id="builder-form">
+        <div class="step-field">
+          <h3><span class="num">1</span> Choose your flavour</h3>
+          <div class="options" id="flavor-options"></div>
+        </div>
+
+        <div class="step-field">
+          <h3><span class="num">2</span> Cake type</h3>
+          <div class="options" id="base-options"></div>
+        </div>
+
+        <div class="step-field">
+          <h3><span class="num">3</span> Size</h3>
+          <div class="options" id="size-options"></div>
+        </div>
+
+        <div class="step-field">
+          <h3><span class="num">4</span> Message &amp; finishing</h3>
+          <div class="options" id="message-options"></div>
+        </div>
+
+        <div class="step-field">
+          <h3><span class="num">5</span> Candle</h3>
+          <div class="options" id="candle-options"></div>
+        </div>
+
+        <div class="step-field">
+          <h3><span class="num">6</span> Your details</h3>
+          <div class="field">
+            <label for="cust-name">Your name</label>
+            <input id="cust-name" placeholder="Full name" maxlength="60">
+          </div>
+          <div class="field">
+            <label for="cust-phone">Phone number</label>
+            <input id="cust-phone" placeholder="03XX-XXXXXXX" maxlength="20">
+          </div>
+          <div class="field">
+            <label for="cust-email">Email</label>
+            <input id="cust-email" type="email" placeholder="you@example.com">
+          </div>
+<div class="combo-row">
+            <div class="field">
+              <label for="cc-city">City</label>
+              <select id="cc-city"></select>
+            </div>
+            <div class="field">
+              <label for="cc-area">Delivery area</label>
+              <select id="cc-area"></select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="cc-addr">Delivery address</label>
+            <input id="cc-addr" placeholder="House, street — e.g. House 4, Block C" maxlength="120">
+          </div>
+          <div class="field">
+            <label for="cake-name">Name to print (optional)</label>
+            <input id="cake-name" placeholder="e.g. Happy Birthday Ayesha!" maxlength="30">
+          </div>
+          <div class="field">
+            <label for="cake-date">Event date</label>
+            <input id="cake-date" type="date" min="2026-08-15">
+          </div>
+<div class="field">
+            <label for="cake-notes">Special instructions</label>
+            <textarea id="cake-notes" placeholder="Allergies, theme colours, photo reference..."></textarea>
+          </div>
+          <div class="field">
+            <label>Attach a design reference (optional)</label>
+            <label class="comp-file" id="cc-file-btn" for="cc-file-input">
+              <input type="file" id="cc-file-input" accept="image/*,video/*" hidden>
+              <i class="fa-solid fa-paperclip"></i>
+              <span id="cc-file-label">Attach photo or video</span>
+              <small id="cc-file-name" style="display:none"></small>
+            </label>
+            <p class="cc-file-hint"><i class="fa-solid fa-circle-info"></i> Max 20 MB — show us design ideas or references, the team will see them.</p>
+          </div>
+        </div>
+      </form>
+
+      <!-- RIGHT: live preview -->
+      <aside class="preview-pane reveal-right">
+        <div class="cake-visual">
+          <div class="cake-layer layer-3" id="layer3"></div>
+          <div class="cake-frost frost-3" id="frost-3"></div>
+          <div class="cake-layer layer-2" id="layer2"></div>
+          <div class="cake-frost frost-2" id="frost-2"></div>
+          <div class="cake-layer layer-1" id="layer1"></div>
+          <div class="cake-frost frost-1" id="frost-1"></div>
+          <span id="cake-candle" style="display:none" class="cake-candle"><i class="fa-solid fa-fire"></i></span>
+          <span id="cake-cherry" class="cake-cherry"><i class="fa-solid fa-heart"></i></span>
+          <div class="plate"></div>
+        </div>
+        <div id="cake-message" style="font-family:var(--font-head);color:var(--choco);font-size:1.15rem;min-height:30px;margin-bottom:16px;font-style:italic"></div>
+
+        <div class="order-summary">
+          <div class="row"><span>Base price (Half Kg)</span><span id="sum-base">Rs. 2,450</span></div>
+          <div class="row"><span>Flavour</span><span id="sum-flavour">Free</span></div>
+          <div class="row"><span>Cake type</span><span id="sum-add">+ Rs. 0</span></div>
+          <div class="row"><span>Size</span><span id="sum-size">Free</span></div>
+          <div class="row"><span>Message / finishing</span><span id="sum-extra">+ Rs. 0</span></div>
+          <div class="row"><span>Candle</span><span id="sum-candle">Free</span></div>
+          <div class="row total"><span>Total</span><span id="sum-total">Rs. 2,450</span></div>
+        </div>
+
+        <p class="delivery-note"><i class="fa-solid fa-moped"></i> Free delivery inside the city • Delivered fresh on your event day</p>
+        <button class="btn btn-primary btn-lg" style="width:100%" id="add-custom">
+          <i class="fa-solid fa-moped"></i> Place Custom Cake Order
+        </button>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ SUCCESS ============ -->
+  <section>
+    <div class="container">
+      <div class="order-success" id="order-success" style="display:none">
+        <div class="s-icon"><i class="fa-solid fa-cake-candles"></i></div>
+        <h2>Great news — order received!</h2>
+        <p>Thanks for choosing us, our team will contact you for further details.</p>
+        <span class="s-id" id="order-success-id">Order #OD-0000</span>
+        <div class="s-actions">
+          <a href="index.html" class="btn btn-primary btn-lg"><i class="fa-solid fa-house"></i> Back to Home</a>
+          <button class="btn btn-outline" id="new-cake-btn"><i class="fa-solid fa-cake-candles"></i> Design Another Cake</button>
+        </div>
+</div>
+    </div>
+  </section>
+
+  <section class="container" style="padding-bottom:56px;margin-top:-40px">
+    <div class="credit-note"><i class="fa-solid fa-circle-info"></i> <span>Custom cakes need 1 day advance notice. All prices include tax — no hidden charges ever.</span></div>
+  </section>
+
+  <footer id="site-footer"></footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/custom-cake.js"></script>
+</body>
+</html>

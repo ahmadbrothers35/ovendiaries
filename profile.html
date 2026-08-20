@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile — Oven Diaries</title>
+  <meta name="description" content="Your Oven Diaries account — personal details, delivery address and order history.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/profile.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23d9a05b'/%3E%3Ctext x='50' y='68' font-size='48' font-family='Georgia' font-weight='bold' fill='white' text-anchor='middle'%3EOD%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+  <header id="site-header"></header>
+
+  <section class="profile-sec">
+    <div class="container">
+      <div class="profile-layout">
+        <aside class="up-card">
+          <div class="up-avatar" id="up-avatar">A</div>
+          <span class="status-pill delivered" id="up-role"><i class="fa-solid fa-user-check"></i> CUSTOMER</span>
+          <h3 id="up-name">—</h3>
+          <p class="up-mail" id="up-mail">—</p>
+          <div class="up-meta">
+            <span><i class="fa-solid fa-calendar-check"></i> Member since <b id="up-since">2026</b></span>
+            <span><i class="fa-solid fa-key"></i> Signed in <b>Today</b></span>
+          </div>
+          <button class="btn btn-outline" id="up-logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+        </aside>
+
+        <div class="profile-main">
+
+          <!-- PERSONAL DETAILS -->
+          <div class="up-section" id="sec-personal">
+            <div class="up-head">
+              <h2><i class="fa-solid fa-id-card"></i> Personal Details</h2>
+              <button class="mini-btn primary" id="pd-edit"><i class="fa-solid fa-pen"></i> Edit</button>
+              <button class="mini-btn" id="pd-cancel" style="display:none"><i class="fa-solid fa-xmark"></i> Cancel</button>
+            </div>
+            <div class="up-rows" id="pd-view">
+              <div class="up-row"><span>Full name</span><b id="pd-name">—</b></div>
+              <div class="up-row"><span>Email address</span><b id="pd-mail">—</b></div>
+              <div class="up-row"><span>Phone</span><b id="pd-phone">—</b></div>
+            </div>
+            <form class="up-form" id="pd-form" style="display:none" novalidate>
+              <div class="field"><label>Full name *</label><input id="pd-name-input" maxlength="60"></div>
+              <div class="field"><label>Email address *</label><input id="pd-mail-input" type="email" maxlength="80"></div>
+              <div class="field"><label>Phone</label><input id="pd-phone-input" maxlength="20" placeholder="0300-1234567"></div>
+              <div class="field"><label>Password *</label><input id="pd-pass-input" maxlength="40"></div>
+              <div class="actions" style="grid-column:1/-1;display:flex;gap:12px">
+                <button class="btn btn-primary" type="submit"><i class="fa-solid fa-floppy-disk"></i> Save Details</button>
+              </div>
+            </form>
+            <p class="up-note" id="pd-note" style="display:none"><i class="fa-solid fa-circle-check"></i> Details saved — keep your password strong!</p>
+          </div>
+
+          <!-- ADDRESS -->
+          <div class="up-section" id="sec-address">
+            <div class="up-head">
+              <h2><i class="fa-solid fa-location-dot"></i> Address</h2>
+            </div>
+<form class="up-form" id="addr-form" novalidate>
+              <div class="field"><label>City</label><select id="addr-city"></select></div>
+              <div class="field"><label>Delivery area</label><select id="addr-area"></select></div>
+              <div class="field"><label>Street address</label><input id="addr-street" maxlength="120" placeholder="House, street, block — e.g. House 4, Block C"></div>
+              <div class="actions" style="grid-column:1/-1;display:flex;gap:12px">
+                <button class="btn btn-primary" type="submit"><i class="fa-solid fa-map-pin"></i> Save Address</button>
+              </div>
+            </form>
+            <p class="up-note" id="addr-note" style="display:none"><i class="fa-solid fa-circle-check"></i> Delivery address saved.</p>
+          </div>
+
+          <!-- ORDERS -->
+          <div class="up-section" id="sec-orders">
+            <div class="up-head">
+              <h2><i class="fa-solid fa-receipt"></i> My Orders</h2>
+            </div>
+            <div class="order-tabs">
+              <button class="ord-tab active" data-tab="complete"><i class="fa-solid fa-circle-check"></i> Complete <span class="ord-cnt" id="cnt-complete">0</span></button>
+              <button class="ord-tab" data-tab="pending"><i class="fa-solid fa-clock"></i> Pending <span class="ord-cnt" id="cnt-pending">0</span></button>
+              <button class="ord-tab" data-tab="canceled"><i class="fa-solid fa-ban"></i> Canceled <span class="ord-cnt" id="cnt-canceled">0</span></button>
+            </div>
+            <div id="orders-list"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+</html>

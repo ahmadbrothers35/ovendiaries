@@ -1,0 +1,99 @@
+/* ============================================
+   Oven Diaries - bakery / shop styles
+   (split from css/style.css)
+   ============================================ */
+
+/* ============ SHOP TOOLBAR ============ */
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  padding: 9px 20px;
+  border-radius: 99px;
+  border: 1.5px solid var(--border);
+  background: var(--cream-2);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text);
+  transition: all 0.3s ease;
+}
+
+.chip:hover {
+  border-color: var(--caramel);
+  color: var(--caramel-dark);
+  transform: translateY(-2px);
+}
+
+.chip.active {
+  background: var(--caramel);
+  color: #fff;
+  border-color: var(--caramel);
+  box-shadow: 0 8px 20px rgba(217, 160, 91, 0.35);
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--cream-2);
+  border: 1.5px solid var(--border);
+  border-radius: 99px;
+  padding: 9px 20px;
+  min-width: 250px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-box:focus-within {
+  border-color: var(--caramel);
+  box-shadow: 0 0 0 4px rgba(217, 160, 91, 0.15);
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  background: none;
+  flex: 1;
+}
+
+.store-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.sort-select {
+  padding: 10px 34px 10px 18px;
+  border-radius: 99px;
+  border: 1.5px solid var(--border);
+  background: var(--cream-2);
+  outline: none;
+  font-size: 0.88rem;
+  color: var(--text);
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235d4037' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+
+
+@media (max-width: 700px) {
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .search-box {
+    min-width: 0;
+  }
+}
